@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,6 +113,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="song-container">
@@ -128,6 +130,7 @@
         <pre id="songLyrics"></pre>
 
         <!-- Bottom Sticky Player -->
+        <!-- Bottom Sticky Player -->
         <div class="controls-bar">
             <div class="song-info">
                 <img id="songBannerBottom" src="" alt="Song Banner">
@@ -136,18 +139,20 @@
                     <span id="songWriterBottom"></span>
                 </div>
             </div>
+
             <div class="controls">
-                <button id="playBtn">Play</button>
-                <button id="stopBtn">Stop</button>
+                <button id="playPauseBtn">▶️</button>
+                <button id="stopBtn">⏹️</button>
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar" value="0" min="0" step="1">
+                <span id="duration">0:00</span>
             </div>
         </div>
     </div>
 
     <audio id="songAudio" style="display:none;"></audio>
     <script src="song.js"></script>
-   
+
 </body>
+
 </html>
-
-
-

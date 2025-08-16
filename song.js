@@ -1158,3 +1158,54 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("songWriterBottom").innerText = song.writer;
     }
 });
+
+
+const audioPlayer = document.getElementById("songAudio");
+const playPauseBtn = document.getElementById("playPauseBtn");
+const stopBtn = document.getElementById("stopBtn");
+const progressBar = document.getElementById("progressBar");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
+
+// Format time helper (mm:ss)
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+}
+
+// Play / Pause toggle
+playPauseBtn.addEventListener("click", () => {
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.textContent = "⏸️"; // Pause icon
+    } else {
+        audioPlayer.pause();
+        playPauseBtn.textContent = "▶️"; // Play icon
+    }
+});
+
+// Stop button
+stopBtn.addEventListener("click", () => {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+    playPauseBtn.textContent = "▶️";
+});
+
+// Update progress bar + time
+audioPlayer.addEventListener("timeupdate", () => {
+    progressBar.value = audioPlayer.currentTime;
+    currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+});
+
+// When metadata loads, set duration
+audioPlayer.addEventListener("loadedmetadata", () => {
+    progressBar.max = audioPlayer.duration;
+    durationEl.textContent = formatTime(audioPlayer.duration);
+});
+
+// Seek functionality
+progressBar.addEventListener("input", () => {
+    audioPlayer.currentTime = progressBar.value;
+});
+
