@@ -1,0 +1,792 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #181818;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* side pannel css  */
+
+.side-panel {
+  width: 250px;
+  height: 100vh;
+  position: relative;
+  display: inline-block;
+
+
+}
+
+.divider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 2270px;
+  background-color: hotpink;
+  /* Vertical line color */
+
+}
+
+#RythMix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.RythMix {
+  color: hotpink;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 30px;
+
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+
+.menu {
+  color: #EE10B0;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.Home a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+
+
+}
+
+.Discover a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+
+}
+
+.Albums a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.Artists a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.Home a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.Discover a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.Albums a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.Artists a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+#Library {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+
+.Library {
+  color: #EE10B0;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.Recently_Added a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.Most_played a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.Recently_Added a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.Most_played a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+#Playlist_favorite {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+
+.Playlist_favorite {
+  color: #EE10B0;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.Your_favorites a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.Your_playlist a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.Add_playlist a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.Your_favorites a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.Your_playlist a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.Add_playlist a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+#general {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+
+.general {
+  color: #EE10B0;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.Setting a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+
+}
+
+.Logout a {
+  color: white;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.Setting a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.Logout a:hover {
+  background-color: #EE10B0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.main {
+  flex: 1;
+  /* Take up remaining space */
+  padding: 20px;
+}
+
+.hero {
+  height: 70vh;
+  width: auto;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-image: url("herosection_img.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* navbar css */
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 80px;
+  padding: 20px;
+
+
+}
+
+
+
+.navbar input {
+  background-color: #1F1F1F;
+  width: 20%;
+  border: none;
+  height: 4vh;
+  border-radius: 5px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+
+}
+
+
+.navbarbutton {
+  display: flex;
+  gap: 50px;
+}
+
+#button1,
+#button2 {
+  display: inline-block; /* allows padding & dimensions */
+  text-align: center;
+  line-height: 4vh; /* vertically center text */
+  background-color: #00ffff;
+  height: 4vh;
+  width: 120px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+  text-decoration: none; /* remove underline */
+  border: none;
+  transition: box-shadow 0.3s ease;
+}
+
+#button1:hover,
+#button2:hover {
+  box-shadow: 0 0 15px #00ffff;
+  cursor: pointer;
+}
+
+
+
+.herohead {
+  margin: 50px;
+}
+
+.hero_heading {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.best_song {
+  color: #EE10B0;
+}
+
+.hero_para {
+  font-size: 15px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+
+/* weekely songs css */
+
+.weekly_top_songs {
+  padding: 20px;
+
+
+}
+
+.weekly_top_songs h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 15px;
+
+}
+
+.songs {
+  color: #EE10B0;
+}
+
+
+.song-list {
+  display: flex;
+  gap: 50px;
+  margin: 20px;
+  flex-wrap: nowrap;
+
+
+}
+
+.song-card {
+  width: 150px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid white;
+  overflow: hidden;
+  text-align: center;
+  background: transparent;
+}
+
+.song-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.song-name {
+  margin-top: 10px;
+  font-weight: 800;
+  font-size: 16px;
+  color: white;
+}
+
+.artist-name {
+  margin-top: 5px;
+  font-size: 14px;
+  color: white;
+}
+
+button {
+  color: aliceblue;
+}
+
+/* trending songs css */
+
+.Trending-Songs {
+  padding: 20px;
+}
+
+.Trending-Songs h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.trending-list {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+  flex-direction: column;
+
+}
+
+.trendingsong-card {
+  width: 100%;
+  height: 9vh;
+  border-radius: 20px;
+  padding: 10px;
+  overflow: hidden;
+  /* border: 1px solid rgb(117, 47, 216); */
+  background-color: #373131;
+  display: grid;
+  grid-template-columns: 50px 60px 1fr 150px 1.5fr 50px;
+  align-items: center;
+  gap: 50px;
+}
+
+.trendingsong-card img {
+  width: 50px;
+  height: 50px;
+
+
+}
+
+.card-songname {
+  display: flex;
+  flex-direction: column;
+}
+
+.songname {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.artistname {
+  color: white;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.trendingsong-card p {
+  color: white;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* footer css */
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+    flex-wrap: wrap;
+  /* border: 1px solid white; */
+  gap: 30px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.about h2 {
+  color: white;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.about p {
+  color: white;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+.aboutblue {
+  color: #0E9EEF;
+}
+
+.Melodies {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  align-items: center;
+
+}
+
+.Melodies h2 {
+  color: white;
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.Melodies i {
+  color: aliceblue;
+}
+
+.Melodies h3 {
+  color: white;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  margin: 80px;
+  align-items: center;
+}
+
+.social-icons h2 {
+  color: #EE10B0;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.icons a {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+
+/* responsiveness code  */
+
+/* ------------------ Responsive Styles for Mobile ------------------ */
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .side-panel {
+    position: fixed;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #181818;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-panel.active {
+    left: 0;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #fff;
+    z-index: 1100;
+    cursor: pointer;
+  }
+
+  .main {
+    margin-top: 60px;
+    padding: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .navbar input {
+    width: 100%;
+  }
+
+  .navbarbutton {
+    gap: 10px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 20px;
+  }
+
+  .herohead {
+    margin: 20px 0;
+  }
+
+  .song-list {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .trendingsong-card {
+    grid-template-columns: 30px 40px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .trendingsong-card p,
+  .card-songname {
+    grid-column: span 3;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .Melodies,
+  .about,
+  .social-icons {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+  }
+
+}
+
+
+
+
+/* Trending Songs – Card Layout for All Phones (≤768px) */
+@media (max-width: 768px) {
+  /* Hide the header row */
+  .trending-list .trendingsong-card:first-child {
+    display: none;
+  }
+
+  .trending-list {
+    overflow-x: hidden;
+  }
+
+  .trendingsong-card {
+    display: grid;
+    grid-template-columns: 36px 50px 1fr 60px; /* # | cover | info | time */
+    grid-template-rows: auto auto auto;
+    gap: 8px 12px;
+    min-width: unset;
+    height: auto;
+    padding: 12px;
+    border-radius: 14px;
+    background: radial-gradient(
+      120% 120% at 0% 0%,
+      rgba(238, 16, 176, 0.18) 0%,
+      rgba(0, 255, 255, 0.12) 40%,
+      rgba(255, 255, 255, 0.04) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+    align-items: start;
+  }
+
+  /* Element placement */
+  .trendingsong-card .hashtag {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    justify-self: center;
+    align-self: start;
+    color: #00ffff;
+    font-weight: 700;
+  }
+
+  .trendingsong-card img {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .trendingsong-card .card-songname {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .trendingsong-card .songname {
+    font-size: 16px;
+  }
+
+  .trendingsong-card .artistname {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+  .trendingsong-card .relasedate {
+    grid-column: 3;
+    grid-row: 2;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: rgba(0, 255, 255, 0.12);
+    color: #e8ffff;
+    width: fit-content;
+  }
+
+  .trendingsong-card .album {
+    grid-column: 3;
+    grid-row: 3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.9;
+    font-size: 13px;
+  }
+
+  .trendingsong-card .time {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+    font-size: 12px;
+    background: rgba(238, 16, 176, 0.18);
+    padding: 4px 8px;
+    border-radius: 999px;
+  }
+}
+
+
+

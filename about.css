@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #181818;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.title h1{
+    color: #EE10B0;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+#navbar{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     gap: 50px;
+}
+
+#navbar a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.main{
+   
+    height: 40vmax;
+    width: 70vmax;
+    border: 2px solid rgb(50, 81, 219);
+    border-radius: 20px;
+}
+
+.about{
+     text-align: center;
+    color: #EE10B0;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    margin: 15px;
+}
+
+.p1{
+    text-align: justify;
+   margin: 20px;
+   padding: 20px;
+    color: white;
+    font-size: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.main h3{
+   
+    color: white;
+
+}
+
+.main h4{
+   
+    color: white;
+}
+
+.q1{
+ margin-left: 40px;
+}
+
+.q1 h3{
+    font-size: 25px;
+}
+
+.q1 h4{
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .title h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    #navbar {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    #navbar a {
+        font-size: 16px;
+    }
+
+    .hero {
+        margin: 10px;
+    }
+
+    .main {
+        width: 90vw;
+        height: auto;
+        padding: 10px;
+       
+    }
+
+    .about {
+        font-size: 20px;
+    }
+
+    .p1 {
+        font-size: 16px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .q1 {
+        margin-left: 20px;
+    }
+
+    .q1 h3 {
+        font-size: 20px;
+    }
+
+    .q1 h4 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title h1 {
+        font-size: 20px;
+    }
+
+    .about {
+        font-size: 18px;
+    }
+
+    .p1 {
+        font-size: 14px;
+    }
+
+    .q1 h3, .q1 h4 {
+        font-size: 14px;
+    }
+}

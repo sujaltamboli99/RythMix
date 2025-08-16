@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>RythMix</title>
+</head>
+
+<body>
+  <!-- Hamburger Icon (Mobile Only) -->
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+
+
+  <!-- Overlay to close sidebar -->`
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <div class="container">
+    <div class="side-panel" id="sidebar">
+      <div id="RythMix">
+        <h2 class="RythMix">RythMix</h2>
+      </div>
+
+      <div id="menu">
+        <h2 class="menu">menu</h2><br /><br />
+        <h3 class="Home"><a href="#"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a></h3><br />
+        <h3 class="Discover"><a href="#"><i class="fa-solid fa-compass"></i>&nbsp;&nbsp; Discover</a></h3><br />
+        <h3 class="Albums"><a href="#"><i class="fa-solid fa-record-vinyl"></i>&nbsp;&nbsp; Albumps</a></h3><br />
+        <h3 class="Artists"><a href="#"><i class="fa-solid fa-circle-user"></i>&nbsp;&nbsp; Artists</a></h3><br />
+      </div>
+
+      <div id="Library">
+        <h2 class="Library">Library</h2><br />
+        <h3 class="Recently_Added"><a href="#"><i class="fa-solid fa-clock"></i>&nbsp;Recently add</a></h3><br />
+        <h3 class="Most_played"><a href="#"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;Most played</a>
+        </h3>
+        <br />
+      </div>
+
+      <div id="Playlist_favorite">
+        <h2 class="Playlist_favorite">Playlist and favorite</h2><br />
+        <h3 class="Your_favorites"><a href="#"><i class="fa-solid fa-heart"></i>&nbsp;Your favorite </a></h3><br />
+        <h3 class="Your_playlist"><a href="#"><i class="fa-solid fa-music"></i>&nbsp;&nbsp;Your playlist</a></h3><br />
+        <h3 class="Add_playlist"><a href="#"><i class="fa-solid fa-circle-plus"></i>&nbsp;&nbsp;Add playlist</a></h3>
+        <br />
+      </div>
+
+      <div id="general">
+        <h2 class="general">general</h2><br />
+        <h3 class="Setting"><a href="#"><i class="fa-solid fa-gear"></i>&nbsp;Setting</a></h3><br />
+        <h3 class="Logout"><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;Logout</a></h3>
+        <br />
+      </div>
+
+      <div class="divider"></div>
+    </div>
+
+    <div class="main">
+      <div class="hero">
+        <nav class="navbar">
+          <input type="search" placeholder="Search For Musics, Artists, ...">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="premuim.html">Premuim</a>
+
+          <div class="navbarbutton">
+            <a href="login.html" id="button1">log in</a>
+            <a href="signup.html" id="button2">signup</a>
+          </div>
+
+        </nav>
+
+        <div class="herohead">
+
+          <h2 class="hero_heading">All the <span class="best_song">Best Songs</span></h2><br>
+          <h2 class="hero_heading">in One Place</h2><br><br>
+          <p class="hero_para">On our website, you can access an amazing collection of <br>
+            popular and new songs. Stream your favorite tracks in high <br> quality and enjoy without interruptions.
+            Whatever your taste in <br>music, we have it all for you!</p><br><br>
+          <div class="hero_buttons">
+            <a href="#"><button id="button1">Discover</button></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><button id="button2">Create Playlist</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- weekely top songs html -->
+
+      <section class="weekly_top_songs">
+
+        <h2>weekly top <span class="songs">songs</span> </h2>
+
+        <div class="song-list">
+
+          <div class="song-card" onclick="window.location.href='song.html?song=WhateverItTakes'">
+            <img src="song1.png" alt="">
+            <p class="song-name">Whatever It Takes</p>
+            <p class="artist-name">Imagne Dragons</p>
+          </div>
+          <div class="song-card" onclick="window.location.href='song.html?song=Skyfall'">
+            <img src="song2 (2).png" alt="">
+            <p class="song-name">Skyfall</p>
+            <p class="artist-name">Adele</p>
+          </div>
+          <div class="song-card" onclick="window.location.href='song.html?song=Superman'">
+            <img src="song3 (2).png" alt="">
+            <p class="song-name">Superman</p>
+            <p class="artist-name">Eminiem</p>
+          </div>
+          <div class="song-card" onclick="window.location.href='song.html?song=Softcore'">
+            <img src="song4 (2).png" alt="">
+            <p class="song-name">Softcore</p>
+            <p class="artist-name">The Neighberhood</p>
+          </div>
+          <div class="song-card " onclick="window.location.href='song.html?song=TheLonliest'">
+            <img src="song5 (2).png" alt="">
+            <p class="song-name">The Lonliest</p>
+            <p class="artist-name">Måneskin</p>
+          </div>
+          <div class="song-card" onclick="window.location.href='song.html?song=blue'">
+            <img src="song6.jpeg" alt="">
+            <p class="song-name">blue</p>
+            <p class="artist-name">yung kai </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- New Release Songs -->
+
+      <section class="weekly_top_songs">
+
+        <h2> new relase <span class="songs">songs</span> </h2>
+
+        <div class="song-list">
+
+          <div class="song-card" onclick="window.location.href='song.html?song=linewithouthook'">
+            <img src="song15.jpeg" alt="">
+            <p class="song-name">line without hook</p>
+            <p class="artist-name">Ricky Montgomery </p>
+          </div>
+          <div class="song-card" onclick="window.location.href='song.html?song=ShapeofYou'">
+            <img src="song16.jpeg" alt="">
+            <p class="song-name">Shape of You</p>
+            <p class="artist-name">Ed Sheeran</p>
+          </div>
+          <div class="song-card" onclick="window.location.href='song.html?song=Co2'">
+            <img src="song20.jpeg" alt="">
+            <p class="song-name">Co2</p>
+            <p class="artist-name">Prateek Kuhad</p>
+          </div>
+          <div class="song-card" onclick="window.location.href='song.html?song=UntilIFoundYou'">
+            <img src="song18.jpg" alt="">
+            <p class="song-name">Until I Found You</p>
+            <p class="artist-name">Stephen Sanchez </p>
+          </div>
+          <div class="song-card" onclick="window.location.href='song.html?song=HeatWaves'">
+            <img src="song19.jpeg" alt="">
+            <p class="song-name">Heat Waves</p>
+            <p class="artist-name">Glass Animals</p>
+          </div>
+          <div class="song-card" onclick="window.location.href='song.html?song=nightchanges'">
+            <img src="song12.jpeg" alt="">
+            <p class="song-name">night changes</p>
+            <p class="artist-name">one direction</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="Trending-Songs">
+        <h2>Trending <span class="songs">Songs</span></h2>
+
+        <div class="trending-list">
+
+          <div class="trendingsong-card" style="font-weight: bold; background: transparent; color: #ccc; height: 4vh;">
+            <p>#</p>
+            <p>Cover</p>
+            <p>Song & Artist</p>
+            <p>Date</p>
+            <p>Album</p>
+            <p>Time</p>
+          </div>
+
+
+
+          <div class="trendingsong-card"  onclick="window.location.href='song.html?song=Perfect'" >
+            <p class="hashtag">#1</p>
+            <img src="trending1.jpeg" alt="">
+            <div class="card-songname">
+              <p class="songname">Perfect</p>
+              <p class="artistname">Ed Sheeran</p>
+            </div>
+            <p class="relasedate">Sep 26, 2017</p>
+            <p class="album">Divide</p>
+            <p class="time">4:23</p>
+          </div>
+
+          <div class="trendingsong-card" id="trending2" onclick="window.location.href='song.html?song=LeaveBeforeYouLoveMe'">
+            <p class="hashtag">#2</p>
+            <img src="trending2.jpeg" alt="">
+            <div class="card-songname">
+              <p class="songname">Leave Before You Love Me</p>
+              <p class="artistname">Marshmello & Jonas Brothers</p>
+            </div>
+            <p class="relasedate">May 21, 2021</p>
+            <p class="album">Single</p>
+            <p class="time">2:34</p>
+          </div>
+
+          <div class="trendingsong-card" onclick="window.location.href='song.html?song=Sapphire'">
+            <p class="hashtag">#3</p>
+            <img src="trending3.jpeg" alt="">
+            <div class="card-songname">
+              <p class="songname">Sapphire</p>
+              <p class="artistname">Ed Sheeran</p>
+            </div>
+            <p class="relasedate">Jun 5, 2025</p>
+            <p class="album">Play</p>
+            <p class="time">3:04</p>
+          </div>
+
+          <div class="trendingsong-card" onclick="window.location.href='song.html?song=DiewithaSmile'">
+            <p class="hashtag">#4</p>
+            <img src="trending4.jpeg" alt="">
+            <div class="card-songname">
+              <p class="songname">Die with a Smile</p>
+              <p class="artistname">Lady Gaga & Bruno Mars</p>
+            </div>
+            <p class="relasedate">Aug 16, 2024</p>
+            <p class="album">Mayhem</p>
+            <p class="time">4:11</p>
+          </div>
+
+          <div class="trendingsong-card" onclick="window.location.href='song.html?song=LineWithoutaHook'">
+            <p class="hashtag">#5</p>
+            <img src="trending5.jpeg" alt="">
+            <div class="card-songname">
+              <p class="songname">Line Without a Hook</p>
+              <p class="artistname">Ricky Montgomery</p>
+            </div>
+            <p class="relasedate">Apr 8, 2016</p>
+            <p class="album">Montgomery Ricky</p>
+            <p class="time">4:10</p>
+          </div>
+
+          <div class="trendingsong-card" onclick="window.location.href='song.html?song=OneKiss'">
+            <p class="hashtag">#6</p>
+            <img src="trending6.jpeg" alt="">
+            <div class="card-songname">
+              <p class="songname">One Kiss</p>
+              <p class="artistname">Calvin Harris & Dua Lipa</p>
+            </div>
+            <p class="relasedate">Apr 6, 2018</p>
+            <p class="album">Dua Lipa (Complete Edition)</p>
+            <p class="time">3:34</p>
+          </div>
+
+          <div class="trendingsong-card" onclick="window.location.href='song.html?song=EndofBeginning'">
+            <p class="hashtag">#7</p>
+            <img src="trending7.jpeg" alt="">
+            <div class="card-songname">
+              <p class="songname">End of Beginning</p>
+              <p class="artistname">Djo</p>
+            </div>
+            <p class="relasedate">Sep 16, 2022</p>
+            <p class="album">Decide</p>
+            <p class="time">2:40</p>
+          </div>
+
+
+
+      </section>
+
+      <footer>
+        <div class="footer">
+
+          <div class="about">
+            <h2>About</h2><br>
+            <p>Melodies is a website that has been created for <br>over <span class="songs"> 5 year’s</span> now and it
+              is one of the most <br>famous music player website’s in the world. in <br>this website you can listen and
+              download songs <br>for free. also of you want no limitation you can <br> buy our <span
+                class="aboutblue">premium pass’s</span> .</p>
+          </div>
+
+          <div class="Melodies">
+            <h2>Melodies</h2><br>
+            <i class="fa-solid fa-horizontal-rule"></i>
+            <h3>Songs</h3><br>
+            <h3>Radio</h3><br>
+            <h3>Podcast</h3><br>
+          </div>
+
+
+          <div class="Melodies">
+            <h2>Access</h2><br>
+            <h3>Explor</h3><br>
+            <h3>Artists</h3><br>
+            <h3>Playlists</h3><br>
+            <h3>Albums</h3><br>
+            <h3>Trending</h3><br>
+          </div>
+
+          <div class="Melodies">
+            <h2>Contact</h2><br>
+            <h3>About</h3><br>
+            <h3>Policy</h3><br>
+            <h3>Social Media</h3><br>
+            <h3>Soppurt</h3><br>
+          </div>
+
+          <div class="social-icons">
+            <h2>RythMix</h2><br>
+            <div class="icons">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+              <a href="#"><i class="fa-solid fa-phone"></i></a>
+            </div>
+          </div>
+
+
+        </div>
+      </footer>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+      document.getElementById("overlay").classList.toggle("active");
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <title>RythMix</title>
+
+  <style>
+    /* === Mobile Only Styles === */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1100;
+      font-size: 28px;
+      color: white;
+      background: #111;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1099;
+    }
+
+    .overlay.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .side-panel {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 244px;
+        height: 100vh;
+        background-color: #181818;
+        z-index: 1101;
+        overflow-y: auto;
+        transition: 0.3s ease-in-out;
+      }
+
+      .side-panel.active {
+        left: 0;
+      }
+
+      .divider {
+        display: none; /* optional: hide divider on small screens */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hamburger Icon (Mobile Only) -->
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+  <!-- Overlay to close sidebar -->
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- Sidebar -->
+  <div class="side-panel" id="sidebar">
+    <div id="RythMix">
+      <h2 class="RythMix">RythMix</h2>
+    </div>
+
+    <div id="menu">
+      <h2 class="menu">menu</h2><br /><br />
+      <h3 class="Home"><a href="#"><i class="fa-solid fa-house"></i>&nbsp;&nbsp;Home</a></h3><br />
+      <h3 class="Discover"><a href="#"><i class="fa-solid fa-compass"></i>&nbsp;&nbsp; Discover</a></h3><br />
+      <h3 class="Albums"><a href="#"><i class="fa-solid fa-record-vinyl"></i>&nbsp;&nbsp; Albumps</a></h3><br />
+      <h3 class="Artists"><a href="#"><i class="fa-solid fa-circle-user"></i>&nbsp;&nbsp; Artists</a></h3><br />
+    </div>
+
+    <div id="Library">
+      <h2 class="Library">Library</h2><br />
+      <h3 class="Recently_Added"><a href="#"><i class="fa-solid fa-clock"></i>&nbsp;Recently add</a></h3><br />
+      <h3 class="Most_played"><a href="#"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;Most played</a></h3><br />
+    </div>
+
+    <div id="Playlist_favorite">
+      <h2 class="Playlist_favorite">Playlist and favorite</h2><br />
+      <h3 class="Your_favorites"><a href="#"><i class="fa-solid fa-heart"></i>&nbsp;Your favorite </a></h3><br />
+      <h3 class="Your_playlist"><a href="#"><i class="fa-solid fa-music"></i>&nbsp;&nbsp;Your playlist</a></h3><br />
+      <h3 class="Add_playlist"><a href="#"><i class="fa-solid fa-circle-plus"></i>&nbsp;&nbsp;Add playlist</a></h3><br />
+    </div>
+
+    <div id="general">
+      <h2 class="general">general</h2><br />
+      <h3 class="Setting"><a href="#"><i class="fa-solid fa-gear"></i>&nbsp;Setting</a></h3><br />
+      <h3 class="Logout"><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;Logout</a></h3><br />
+    </div>
+
+    <div class="divider"></div>
+  </div>
+
+  <!-- JavaScript for Toggle -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+      document.getElementById("overlay").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

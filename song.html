@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .song-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Top Spotify-like section */
+        .top-section {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #1db954, #121212 80%);
+        }
+
+        .top-section img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .top-text {
+            text-align: left;
+        }
+
+        .top-text h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .top-text .writer {
+            font-size: 16px;
+            font-style: italic;
+            color: #ccc;
+        }
+
+        /* Lyrics section */
+        pre {
+            white-space: pre-wrap;
+            text-align: left;
+            background: none;
+            font-size: 16px;
+            line-height: 1.6;
+            padding: 20px;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        /* Sticky bottom player bar */
+        .controls-bar {
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            background-color: #181818;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            border-top: 1px solid #333;
+        }
+
+        .controls-bar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .song-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .song-info-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+        }
+
+        .controls-bar button {
+            margin-left: 10px;
+            padding: 8px 14px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+
+        #playBtn {
+            background: #1db954;
+            color: white;
+        }
+
+        #stopBtn {
+            background: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="song-container">
+        <!-- Top section -->
+        <div class="top-section">
+            <img id="songBanner" src="" alt="Song Banner">
+            <div class="top-text">
+                <h1 id="songTitle"></h1>
+                <p class="writer" id="songWriter"></p>
+            </div>
+        </div>
+
+        <!-- Lyrics -->
+        <pre id="songLyrics"></pre>
+
+        <!-- Bottom Sticky Player -->
+        <div class="controls-bar">
+            <div class="song-info">
+                <img id="songBannerBottom" src="" alt="Song Banner">
+                <div class="song-info-text">
+                    <span id="songTitleBottom"></span>
+                    <span id="songWriterBottom"></span>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="playBtn">Play</button>
+                <button id="stopBtn">Stop</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="songAudio" style="display:none;"></audio>
+    <script src="song.js"></script>
+   
+</body>
+</html>
+
+
+
