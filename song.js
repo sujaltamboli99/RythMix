@@ -779,7 +779,7 @@ An angel in person, and she looks perfect
 Though I don't deserve this, you look perfect tonight`,
         audio: " yt1z.net - Ed Sheeran - Perfect (Official Music Video) (320 KBps) (1).mp3 "
     },
-        LeaveBeforeYouLoveMe: {
+    LeaveBeforeYouLoveMe: {
         title: "Leave Before You Love Me",
         writer: "Marshmello & Jonas BrothersEd Sheeran",
         banner: "trending2.jpeg",
@@ -824,7 +824,7 @@ I'm sorry
 Ay, ay, leave before you love me`,
         audio: " yt1z.net - Marshmello x Jonas Brothers - Leave Before You Love Me (Official Music Video) (320 KBps).mp3 "
     },
-          Sapphire: {
+    Sapphire: {
         title: " Sapphire",
         writer: "Ed Sheeran",
         banner: "trending3.jpeg",
@@ -926,7 +926,7 @@ Sapphire
 `,
         audio: " yt1z.net - Ed Sheeran - Sapphire (Official Music Video) (320 KBps).mp3 "
     },
-         DiewithaSmile: {
+    DiewithaSmile: {
         title: "Die with a Smile",
         writer: "Lady Gaga & Bruno Mars",
         banner: "trending4.jpeg",
@@ -969,7 +969,7 @@ Ooh
 I'd wanna be next to you`,
         audio: " yt1z.net - Lady Gaga, Bruno Mars - Die With A Smile (Official Music Video) (320 KBps).mp3  "
     },
-             LineWithoutaHook: {
+    LineWithoutaHook: {
         title: "Line Without a Hook",
         writer: "Ricky Montgomery",
         banner: "trending5.jpeg",
@@ -1028,7 +1028,7 @@ And if I could take it all back
 I swear that I would pull you from the tide`,
         audio: " yt1z.net - Ricky Montgomery - Line Without a Hook (Official Lyric Video) (320 KBps).mp3 "
     },
-            OneKiss: {
+    OneKiss: {
         title: "One Kiss",
         writer: "Calvin Harris & Dua Lipa",
         banner: "trending6.jpeg",
@@ -1077,7 +1077,7 @@ Falling in love with me
 Possibilities, I look like all you need`,
         audio: " yt1z.net - Calvin Harris, Dua Lipa - One Kiss (Official Video) (320 KBps).mp3 "
     },
-               EndofBeginning: {
+    EndofBeginning: {
         title: "End of Beginning",
         writer: "Djo",
         banner: "trending7.jpeg",
@@ -1123,89 +1123,74 @@ const songKey = params.get("song"); // ?song=ShapeOfYou
 if (songKey && songsData[songKey]) {
     const song = songsData[songKey];
 
-    // Fill HTML
+    // Fill top section
     document.getElementById("songTitle").innerText = song.title;
     document.getElementById("songBanner").src = song.banner;
     document.getElementById("songWriter").innerText = `Written by: ${song.writer}`;
     document.getElementById("songLyrics").innerText = song.lyrics;
 
-    // Audio
+    // Fill bottom section
+    document.getElementById("songBannerBottom").src = song.banner;
+    document.getElementById("songTitleBottom").innerText = song.title;
+    document.getElementById("songWriterBottom").innerText = song.writer;
+
+    // Setup audio
     const audioPlayer = document.getElementById("songAudio");
     audioPlayer.src = song.audio;
-    audioPlayer.play(); // Auto-play
-
-    // Play Button
-    document.getElementById("playBtn").addEventListener("click", () => {
-        audioPlayer.play();
+    audioPlayer.play().then(() => {
+        playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    }).catch(err => {
+        console.log("Autoplay blocked by browser:", err);
     });
 
-    // Stop Button
-    document.getElementById("stopBtn").addEventListener("click", () => {
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const progressBar = document.getElementById("progressBar");
+    const currentTimeEl = document.getElementById("currentTime");
+    const durationEl = document.getElementById("duration");
+
+    // Format time helper
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+    }
+
+    // Play / Pause toggle
+    playPauseBtn.addEventListener("click", () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseBtn.innerHTML = '<i class="fa-solid fa-stop"></i>';// pause icon
+        } else {
+            audioPlayer.pause();
+            playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>'; // play icon
+        }
+    });
+
+    // Stop
+    stopBtn.addEventListener("click", () => {
         audioPlayer.pause();
         audioPlayer.currentTime = 0;
+        playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+    });
+
+    // Update progress bar and time
+    audioPlayer.addEventListener("timeupdate", () => {
+        progressBar.value = audioPlayer.currentTime;
+        currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+    });
+
+    // When metadata is loaded
+    audioPlayer.addEventListener("loadedmetadata", () => {
+        progressBar.max = audioPlayer.duration;
+        durationEl.textContent = formatTime(audioPlayer.duration);
+    });
+
+    // Seek
+    progressBar.addEventListener("input", () => {
+        audioPlayer.currentTime = progressBar.value;
     });
 } else {
     document.body.innerHTML = "<h2>Song not found!</h2>";
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const songKey = params.get("song");
-    if (songKey && songsData[songKey]) {
-        const song = songsData[songKey];
-        document.getElementById("songBannerBottom").src = song.banner;
-        document.getElementById("songTitleBottom").innerText = song.title;
-        document.getElementById("songWriterBottom").innerText = song.writer;
-    }
-});
-
-
-const audioPlayer = document.getElementById("songAudio");
-const playPauseBtn = document.getElementById("playPauseBtn");
-const stopBtn = document.getElementById("stopBtn");
-const progressBar = document.getElementById("progressBar");
-const currentTimeEl = document.getElementById("currentTime");
-const durationEl = document.getElementById("duration");
-
-// Format time helper (mm:ss)
-function formatTime(seconds) {
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
-}
-
-// Play / Pause toggle
-playPauseBtn.addEventListener("click", () => {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseBtn.textContent = "⏸️"; // Pause icon
-    } else {
-        audioPlayer.pause();
-        playPauseBtn.textContent = "▶️"; // Play icon
-    }
-});
-
-// Stop button
-stopBtn.addEventListener("click", () => {
-    audioPlayer.pause();
-    audioPlayer.currentTime = 0;
-    playPauseBtn.textContent = "▶️";
-});
-
-// Update progress bar + time
-audioPlayer.addEventListener("timeupdate", () => {
-    progressBar.value = audioPlayer.currentTime;
-    currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
-});
-
-// When metadata loads, set duration
-audioPlayer.addEventListener("loadedmetadata", () => {
-    progressBar.max = audioPlayer.duration;
-    durationEl.textContent = formatTime(audioPlayer.duration);
-});
-
-// Seek functionality
-progressBar.addEventListener("input", () => {
-    audioPlayer.currentTime = progressBar.value;
-});
 
