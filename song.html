@@ -114,6 +114,59 @@
             background: #f44336;
             color: white;
         }
+
+
+        /* Responsive Bottom Player */
+@media (max-width: 768px) {
+    .controls-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .song-info {
+        margin-bottom: 8px;
+        width: 100%;
+    }
+
+    .controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .controls button {
+        flex: 0 0 auto;
+    }
+
+    #progressBar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-section img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .top-text h1 {
+        font-size: 22px;
+    }
+
+    .controls button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    #currentTime, #duration {
+        font-size: 12px;
+    }
+}
+
     </style>
 </head>
 
